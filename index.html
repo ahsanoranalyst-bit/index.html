@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>System Intelligence | Optimization Suite</title>
     <style>
-        /* Modern High-Tech Theme Colors */
         :root {
             --cyan: #00f2ff;
             --gold: #ffd700;
@@ -19,199 +18,164 @@
             font-family: 'Segoe UI', Roboto, sans-serif;
             background-color: var(--dark);
             color: white;
-            scroll-behavior: smooth;
-        }
-
-        /* Top Logo Branding */
-        .logo-container {
-            padding: 20px;
             text-align: center;
-            background: rgba(0,0,0,0.8);
         }
 
-        .main-logo {
-            max-width: 140px;
+        /* 1. Circular Logo Section */
+        .header-branding {
+            padding: 20px 0;
+            background: var(--dark);
+        }
+
+        .logo-circle {
+            width: 100px;
+            height: 100px;
+            background: var(--glass);
+            border: 2px solid var(--cyan);
+            border-radius: 50%; /* This makes it a circle */
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            box-shadow: 0 0 15px var(--cyan);
+        }
+
+        .logo-circle img {
+            width: 80%; /* Adjust logo size inside circle */
             height: auto;
-            filter: drop-shadow(0 0 10px var(--cyan));
         }
 
-        /* Main Visual Banner */
-        .hero-banner {
+        /* 2. Top Banner Image (Full View) */
+        .top-banner {
             width: 100%;
-            height: 55vh; 
-            background: url('background.jpg'); /* Make sure your file is named background.jpg */
-            background-size: cover;
-            background-position: center;
-            border-bottom: 4px solid var(--cyan);
-            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.3);
+            background-color: #000;
+            border-bottom: 2px solid var(--cyan);
         }
 
-        /* Hero Content Section */
-        .content-box {
-            padding: 60px 20px;
-            text-align: center;
-            background: linear-gradient(to bottom, #0a0b10, #161b22);
+        .top-banner img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: contain; /* This ensures image is not cropped */
+            display: block;
         }
 
-        .content-box h1 {
-            font-size: 3.8rem;
+        /* 3. Content Section */
+        .main-content {
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
             color: var(--cyan);
-            text-shadow: 0 0 20px var(--cyan);
-            margin-top: 0;
-            letter-spacing: 2px;
+            text-shadow: 0 0 15px var(--cyan);
+            margin: 20px 0 10px;
         }
 
-        .content-box p {
-            font-size: 1.4rem;
+        .tagline {
             color: var(--gold);
-            margin-bottom: 45px;
-            font-weight: 300;
+            font-size: 1.2rem;
+            margin-bottom: 35px;
         }
 
-        /* Functional Action Buttons */
+        /* 4. Buttons */
         .btn-container {
             display: flex;
-            gap: 25px;
+            gap: 20px;
             justify-content: center;
-            margin-bottom: 50px;
             flex-wrap: wrap;
+            margin-bottom: 50px;
         }
 
         .btn {
-            padding: 18px 45px;
-            font-size: 1.1rem;
+            padding: 15px 35px;
             font-weight: bold;
-            text-transform: uppercase;
             text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.4s ease;
-            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: 0.3s;
+            text-transform: uppercase;
         }
 
-        /* View Only Button Styling */
         .btn-view {
-            background-color: var(--cyan);
-            color: #000;
+            background: var(--cyan);
+            color: black;
         }
 
         .btn-view:hover {
-            background: transparent;
-            color: var(--cyan);
-            border-color: var(--cyan);
-            box-shadow: 0 0 25px var(--cyan);
+            box-shadow: 0 0 20px var(--cyan);
             transform: scale(1.05);
         }
 
-        /* Paid Version Button Styling */
         .btn-paid {
             border: 2px solid var(--gold);
             color: var(--gold);
-            background: transparent;
         }
 
         .btn-paid:hover {
             background: var(--gold);
-            color: #000;
-            box-shadow: 0 0 25px var(--gold);
+            color: black;
+            box-shadow: 0 0 20px var(--gold);
             transform: scale(1.05);
         }
 
-        /* Industries Grid */
-        .industries {
-            padding: 100px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .industries h2 {
-            text-align: center;
-            color: var(--cyan);
-            font-size: 2.8rem;
-            margin-bottom: 60px;
-            text-transform: uppercase;
-        }
-
+        /* Industries Section */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         .card {
             background: var(--glass);
-            padding: 40px;
-            border-radius: 20px;
+            padding: 20px;
+            border-radius: 10px;
             border: 1px solid rgba(0, 242, 255, 0.1);
-            transition: 0.4s;
-            text-align: center;
         }
 
-        .card:hover {
-            border-color: var(--cyan);
-            transform: translateY(-12px);
-            background: rgba(0, 242, 255, 0.08);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .card h3 {
-            color: var(--gold);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 50px;
-            font-size: 0.9rem;
-            color: #555;
-            border-top: 1px solid #1a1a1a;
-        }
+        .card h3 { color: var(--gold); }
     </style>
 </head>
 <body>
 
-    <div class="logo-container">
-        <img src="logo.png" alt="System Intelligence Logo" class="main-logo" onerror="this.style.display='none'">
+    <div class="header-branding">
+        <div class="logo-circle">
+            <img src="logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/80?text=SI'">
+        </div>
     </div>
 
-    <div class="hero-banner"></div>
+    <div class="top-banner">
+        <img src="background.jpg" alt="System Intelligence Banner">
+    </div>
 
-    <section class="content-box">
+    <div class="main-content">
         <h1>SYSTEM INTELLIGENCE</h1>
-        <p>Advanced Industrial Optimization & Analytics Suite</p>
-        
-        <div class="btn-container">
-            <a href="INSERT_DEMO_STREAMLIT_LINK_HERE" target="_blank" class="btn btn-view">View Only (Demo)</a>
-            
-            <a href="INSERT_PAID_STREAMLIT_LINK_HERE" target="_blank" class="btn btn-paid">Paid Version (Pro)</a>
-        </div>
-    </section>
+        <p class="tagline">Advanced Industrial Optimization & Analytics Suite</p>
 
-    <section class="industries">
-        <h2>Target Industries</h2>
+        <div class="btn-container">
+            <a href="YOUR_DEMO_LINK" target="_blank" class="btn btn-view">View Only (Demo)</a>
+            <a href="YOUR_PRO_LINK" target="_blank" class="btn btn-paid">Paid Version (Pro)</a>
+        </div>
+
         <div class="grid">
             <div class="card">
-                <h3>Logistics & Fleet</h3>
-                <p>Advanced route optimization algorithms to minimize fuel consumption and delivery time.</p>
+                <h3>Logistics</h3>
+                <p>Route & Fleet Optimization</p>
             </div>
             <div class="card">
-                <h3>Education Systems</h3>
-                <p>AI-driven timetable generation and institutional resource scheduling.</p>
+                <h3>Education</h3>
+                <p>Institutional Timetabling</p>
             </div>
             <div class="card">
-                <h3>Manufacturing</h3>
-                <p>Production line balancing and resource allocation using Linear Programming models.</p>
-            </div>
-            <div class="card">
-                <h3>Warehouse Tech</h3>
-                <p>Smart inventory forecasting and spatial optimization for large scale storage.</p>
+                <h3>Industry</h3>
+                <p>Resource Allocation</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <footer>
-        &copy; 2026 System Intelligence | Engineered for Global Efficiency
-    </footer>
+    <footer style="padding: 40px; color: #444;">&copy; 2026 System Intelligence</footer>
 
 </body>
 </html>
