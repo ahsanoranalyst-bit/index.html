@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Intelligence | Professional Dashboard</title>
+    <title>System Intelligence | 21-Sector Industrial Suite</title>
     <style>
         :root {
             --cyan: #00f2ff;
             --gold: #ffd700;
-            /* New Dashboard Palette */
             --dark-deep: #050505;
             --navy-glow: #0a111a;
             --glass-bg: rgba(255, 255, 255, 0.03);
@@ -18,264 +17,123 @@
         body, html {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            /* Deep Space Gradient Background */
+            font-family: 'Segoe UI', system-ui, sans-serif;
             background: radial-gradient(circle at top center, var(--navy-glow) 0%, var(--dark-deep) 100%);
             color: #ffffff;
             line-height: 1.6;
             overflow-x: hidden;
-            min-height: 100vh;
         }
 
-        /* 1. Enhanced Header with Glow */
-        .header-section {
-            padding: 30px 0;
-            background: transparent;
-            text-align: center;
-        }
-
+        /* 1. Brand Header */
+        .header-section { padding: 30px 0; text-align: center; }
         .logo-ring {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto;
-            border: 2px solid var(--cyan);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 100px; height: 100px; margin: 0 auto;
+            border: 2px solid var(--cyan); border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
             background: rgba(0, 0, 0, 0.6);
-            /* Soft Neon Pulse Effect */
-            box-shadow: 0 0 20px rgba(0, 242, 255, 0.3), inset 0 0 10px rgba(0, 242, 255, 0.2);
-            transition: 0.5s ease;
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+        }
+        .logo-ring img { width: 70%; height: auto; }
+
+        /* 2. Banner */
+        .banner-container { width: 100%; background: #000; border-bottom: 2px solid var(--glass-border); }
+        .banner-container img { width: 100%; max-width: 1400px; display: block; margin: 0 auto; object-fit: cover; }
+
+        /* 3. Main Wrapper */
+        .main-wrapper { max-width: 1200px; margin: 0 auto; padding: 50px 20px; text-align: center; }
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem); color: var(--cyan);
+            text-shadow: 0 0 15px rgba(0, 242, 255, 0.5);
+            margin: 0; text-transform: uppercase; letter-spacing: 3px;
+        }
+        .subtitle { color: var(--gold); margin-bottom: 40px; letter-spacing: 1px; }
+
+        /* 4. Action Buttons */
+        .cta-container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
+        .btn { padding: 15px 35px; font-weight: bold; text-decoration: none; text-transform: uppercase; border-radius: 4px; transition: 0.3s; min-width: 180px; }
+        .btn-demo { background: var(--cyan); color: #000; }
+        .btn-pro { border: 2px solid var(--gold); color: var(--gold); }
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0,242,255,0.3); }
+
+        /* 5. Sector Categories & Grid */
+        .sector-title {
+            color: var(--cyan); font-size: 1.5rem; text-align: left;
+            margin: 40px 0 20px; border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;
         }
         
-        .logo-ring:hover {
-            box-shadow: 0 0 35px rgba(0, 242, 255, 0.6);
-            transform: rotate(5deg) scale(1.05);
-        }
-
-        .logo-ring img {
-            width: 70%;
-            height: auto;
-            object-fit: contain;
-        }
-
-        /* 2. Seamless Banner Design */
-        .banner-container {
-            width: 100%;
-            border-bottom: 2px solid var(--glass-border);
-            background-color: #000;
-            position: relative;
-        }
-
-        .banner-container::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 50px;
-            background: linear-gradient(to top, var(--dark-deep), transparent);
-        }
-
-        .banner-container img {
-            width: 100%;
-            max-width: 1400px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            object-fit: cover;
-            opacity: 0.9;
-        }
-
-        /* 3. Main Dashboard Wrapper */
-        .main-wrapper {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
-            color: var(--cyan);
-            /* Advanced Text Glow */
-            text-shadow: 0 0 15px rgba(0, 242, 255, 0.5), 0 0 30px rgba(0, 242, 255, 0.2);
-            margin: 0 0 10px 0;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-weight: 800;
-        }
-
-        .subtitle {
-            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
-            color: var(--gold);
-            margin-bottom: 45px;
-            font-weight: 400;
-            letter-spacing: 2px;
-            opacity: 0.9;
-        }
-
-        /* 4. Cyber Buttons with Glow */
-        .cta-container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 70px;
-        }
-
-        .btn {
-            padding: 16px 40px;
-            font-size: 1rem;
-            font-weight: 700;
-            text-decoration: none;
-            text-transform: uppercase;
-            border-radius: 4px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            min-width: 200px;
-            letter-spacing: 1px;
-        }
-
-        .btn-demo {
-            background-color: var(--cyan);
-            color: #000;
-            border: none;
-            box-shadow: 0 4px 15px rgba(0, 242, 255, 0.3);
-        }
-
-        .btn-demo:hover {
-            box-shadow: 0 0 30px var(--cyan);
-            transform: translateY(-5px);
-        }
-
-        .btn-pro {
-            background-color: transparent;
-            color: var(--gold);
-            border: 2px solid var(--gold);
-            box-shadow: inset 0 0 5px rgba(255, 215, 0, 0.1);
-        }
-
-        .btn-pro:hover {
-            background: var(--gold);
-            color: #000;
-            box-shadow: 0 0 30px var(--gold);
-            transform: translateY(-5px);
-        }
-
-        /* 5. Glassmorphism Industrial Cards */
         .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px; margin-bottom: 50px;
         }
 
         .feature-card {
-            background: var(--glass-bg);
-            /* Blurred Glass Effect */
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 35px;
-            border-radius: 12px;
-            border: 1px solid var(--glass-border);
-            text-align: left;
-            transition: 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            background: var(--glass-bg); padding: 25px; border-radius: 8px;
+            border: 1px solid var(--glass-border); text-align: left; transition: 0.3s;
+            position: relative; overflow: hidden;
         }
+        .feature-card::before { content: ""; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--cyan); }
+        .feature-card:hover { background: rgba(0, 242, 255, 0.05); transform: scale(1.03); border-color: var(--cyan); }
+        
+        .feature-card h3 { color: var(--gold); margin: 0 0 8px; font-size: 1.1rem; }
+        .feature-card p { color: #ccc; font-size: 0.85rem; margin: 0; }
+        .sec-id { font-size: 0.7rem; color: var(--cyan); opacity: 0.6; display: block; margin-bottom: 5px; }
 
-        .feature-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--cyan);
-            box-shadow: 0 0 10px var(--cyan);
-        }
+        footer { padding: 40px; color: #555; font-size: 0.8rem; letter-spacing: 2px; }
 
-        .feature-card:hover {
-            background: rgba(0, 242, 255, 0.05);
-            transform: translateY(-10px);
-            border-color: var(--cyan);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .feature-card h3 {
-            color: var(--gold);
-            margin: 0 0 15px 0;
-            font-size: 1.4rem;
-            text-transform: uppercase;
-        }
-
-        .feature-card p {
-            color: #b0b0b0;
-            font-size: 0.95rem;
-            margin: 0;
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 80px;
-            padding: 40px;
-            background: rgba(0,0,0,0.3);
-            font-size: 0.8rem;
-            color: #666;
-            letter-spacing: 2px;
-        }
-
-        /* Mobile Optimization */
-        @media (max-width: 768px) {
-            .logo-ring { width: 85px; height: 85px; }
-            .main-wrapper { padding: 40px 15px; }
-            h1 { letter-spacing: 2px; }
-            .btn { width: 100%; min-width: unset; }
-            .banner-container img { min-height: 220px; }
-        }
+        @media (max-width: 768px) { .btn { width: 100%; } }
     </style>
 </head>
 <body>
 
     <header class="header-section">
-        <div class="logo-ring">
-            <img src="logo.png" alt="SI" onerror="this.src='https://via.placeholder.com/60/0a111a/00f2ff?text=SI'">
-        </div>
+        <div class="logo-ring"><img src="logo.png" alt="SI"></div>
     </header>
 
-    <div class="banner-container">
-        <img src="background.png" alt="System Intelligence Workspace">
-    </div>
+    <div class="banner-container"><img src="background.png" alt="Banner"></div>
 
     <main class="main-wrapper">
         <h1>System Intelligence</h1>
-        <p class="subtitle">Industrial Optimization & Operations Research</p>
+        <p class="subtitle">Multi-Sector Operations Optimization Suite</p>
 
         <div class="cta-container">
             <a href="YOUR_DEMO_URL" target="_blank" class="btn btn-demo">Demo Version</a>
             <a href="YOUR_PAID_URL" target="_blank" class="btn btn-pro">Pro Access</a>
         </div>
 
+        <h2 class="sector-title">Industrial Operations (01-07)</h2>
         <div class="grid-container">
-            <div class="feature-card">
-                <h3>Logistics & Fleet</h3>
-                <p>Advanced route planning and fuel consumption optimization algorithms.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Education Sector</h3>
-                <p>Institutional scheduling and resource management automation.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Manufacturing</h3>
-                <p>Industrial line balancing and resource allocation models.</p>
-            </div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-01</span><h3>Agricultural Operations</h3><p>Resource & harvest yield optimization.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-02</span><h3>Airline Industry</h3><p>Fleet scheduling & flight path analytics.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-04</span><h3>Banking Projects</h3><p>Financial risk & portfolio optimization.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-06</span><h3>Construction Projects</h3><p>Supply chain & site resource management.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-05</span><h3>Diplomacy Projects</h3><p>Strategic negotiation & policy modeling.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-08</span><h3>E-commerce Projects</h3><p>Warehouse & delivery logic optimization.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-07</span><h3>Education Projects</h3><p>Institutional timetabling & resource allocation.</p></div>
+        </div>
+
+        <h2 class="sector-title">Public & Educational Services (08-14)</h2>
+        <div class="grid-container">
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-08b</span><h3>Energy Companies</h3><p>Grid load balancing & distribution.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-09</span><h3>Food Service</h3><p>Inventory & supply chain management.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-11</span><h3>Hotel Operations</h3><p>Occupancy & service efficiency models.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-13</span><h3>Insurance Operations</h3><p>Actuarial modeling & claim optimization.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-12</span><h3>Manufacturing Ops</h3><p>Production line balancing & OR models.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-14</span><h3>Military & Defense</h3><p>Logistics & strategic deployment analytics.</p></div>
+        </div>
+
+        <h2 class="sector-title">Renewable & Sustainability (15-21)</h2>
+        <div class="grid-container">
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-15</span><h3>Pharmaceuticals</h3><p>Drug production & lab optimization.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-16</span><h3>Real Estate</h3><p>Property development & value modeling.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-17</span><h3>Retail Chains</h3><p>Multi-store inventory synchronization.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-18</span><h3>Shipping Companies</h3><p>Maritime logistics & container tracking.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-19</span><h3>Telecommunications</h3><p>Network capacity & coverage planning.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-21</span><h3>Transportation</h3><p>Public transit & fleet route optimization.</p></div>
         </div>
     </main>
 
-    <footer>
-        ENGINEERED BY SYSTEM INTELLIGENCE &copy; 2026
-    </footer>
+    <footer>SYSTEM INTELLIGENCE TURBO CORE &copy; 2026 | ALL SECTORS OPERATIONAL</footer>
 
 </body>
 </html>
