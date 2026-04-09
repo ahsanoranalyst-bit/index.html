@@ -3,179 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Intelligence | Optimization Suite</title>
+    <title>System Intelligence | Industrial Optimization Suite</title>
     <style>
+        /* CSS Variables for Consistency */
         :root {
             --cyan: #00f2ff;
             --gold: #ffd700;
-            --dark: #0a0b10;
-            --glass: rgba(255, 255, 255, 0.05);
+            --dark-bg: #0a0b10;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --transition: all 0.3s ease-in-out;
         }
 
+        /* Base Styles */
         body, html {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--dark);
-            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* 1. Brand Header (Circular Logo) */
+        .header-section {
+            padding: 25px 0;
+            background: linear-gradient(to bottom, #000, var(--dark-bg));
             text-align: center;
         }
 
-        /* 1. Circular Logo Section */
-        .header-branding {
-            padding: 20px 0;
-            background: var(--dark);
-        }
-
-        .logo-circle {
-            width: 100px;
-            height: 100px;
-            background: var(--glass);
-            border: 2px solid var(--cyan);
-            border-radius: 50%; /* This makes it a circle */
+        .logo-ring {
+            width: 110px;
+            height: 110px;
             margin: 0 auto;
+            border: 2px solid var(--cyan);
+            border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
+            background: var(--card-bg);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
             overflow: hidden;
-            box-shadow: 0 0 15px var(--cyan);
         }
 
-        .logo-circle img {
-            width: 80%; /* Adjust logo size inside circle */
+        .logo-ring img {
+            width: 75%;
             height: auto;
+            object-fit: contain;
         }
 
-        /* 2. Top Banner Image (Full View) */
-        .top-banner {
+        /* 2. Professional Hero Banner */
+        .banner-container {
             width: 100%;
+            border-top: 1px solid rgba(0, 242, 255, 0.2);
+            border-bottom: 3px solid var(--cyan);
             background-color: #000;
-            border-bottom: 2px solid var(--cyan);
+            display: flex;
+            justify-content: center;
         }
 
-        .top-banner img {
+        .banner-container img {
             width: 100%;
-            max-height: 500px;
-            object-fit: contain; /* This ensures image is not cropped */
+            max-width: 1400px; /* Limits width on ultra-wide screens */
+            height: auto;
             display: block;
+            object-fit: cover; /* Ensures a high-end cinematic feel */
         }
 
-        /* 3. Content Section */
-        .main-content {
-            padding: 40px 20px;
+        /* 3. Main Content Area */
+        .main-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: clamp(2rem, 6vw, 4rem); /* Responsive font sizing */
             color: var(--cyan);
-            text-shadow: 0 0 15px var(--cyan);
-            margin: 20px 0 10px;
+            text-shadow: 0 0 25px var(--cyan);
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
 
-        .tagline {
+        .subtitle {
+            font-size: clamp(1rem, 3vw, 1.4rem);
             color: var(--gold);
-            font-size: 1.2rem;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
         }
 
-        /* 4. Buttons */
-        .btn-container {
+        /* 4. Action Buttons (Responsive) */
+        .cta-container {
             display: flex;
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 50px;
+            margin-bottom: 80px;
         }
 
         .btn {
-            padding: 15px 35px;
+            padding: 18px 45px;
+            font-size: 1.1rem;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 5px;
-            transition: 0.3s;
             text-transform: uppercase;
+            border-radius: 4px;
+            transition: var(--transition);
+            min-width: 200px;
         }
 
-        .btn-view {
-            background: var(--cyan);
-            color: black;
+        .btn-demo {
+            background-color: var(--cyan);
+            color: #000;
+            border: 2px solid var(--cyan);
         }
 
-        .btn-view:hover {
-            box-shadow: 0 0 20px var(--cyan);
-            transform: scale(1.05);
+        .btn-demo:hover {
+            background: transparent;
+            color: var(--cyan);
+            box-shadow: 0 0 30px var(--cyan);
+            transform: translateY(-5px);
         }
 
-        .btn-paid {
-            border: 2px solid var(--gold);
+        .btn-pro {
+            background-color: transparent;
             color: var(--gold);
+            border: 2px solid var(--gold);
         }
 
-        .btn-paid:hover {
+        .btn-pro:hover {
             background: var(--gold);
-            color: black;
-            box-shadow: 0 0 20px var(--gold);
-            transform: scale(1.05);
+            color: #000;
+            box-shadow: 0 0 30px var(--gold);
+            transform: translateY(-5px);
         }
 
-        /* Industries Section */
-        .grid {
+        /* 5. Industrial Capabilities Grid */
+        .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: left;
         }
 
-        .card {
-            background: var(--glass);
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid rgba(0, 242, 255, 0.1);
+        .feature-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            border-left: 4px solid var(--cyan);
+            transition: var(--transition);
         }
 
-        .card h3 { color: var(--gold); }
+        .feature-card:hover {
+            background: rgba(0, 242, 255, 0.05);
+            transform: scale(1.02);
+        }
+
+        .feature-card h3 {
+            color: var(--gold);
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .feature-card p {
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        /* Footer Section */
+        footer {
+            margin-top: 100px;
+            padding: 40px;
+            border-top: 1px solid #1a1b20;
+            font-size: 0.85rem;
+            color: #555;
+            letter-spacing: 1px;
+        }
+
+        /* Tablet & Mobile Specific Adjustments */
+        @media (max-width: 768px) {
+            .logo-ring { width: 90px; height: 90px; }
+            .main-wrapper { padding: 40px 15px; }
+            .btn { width: 100%; } /* Full width buttons on mobile */
+            .banner-container img { min-height: 250px; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="header-branding">
-        <div class="logo-circle">
-            <img src="logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/80?text=SI'">
+    <header class="header-section">
+        <div class="logo-ring">
+            <img src="logo.png" alt="SI Logo" onerror="this.src='https://via.placeholder.com/80/0a0b10/00f2ff?text=SI'">
         </div>
+    </header>
+
+    <div class="banner-container">
+        <img src="background.jpg" alt="System Intelligence Workspace">
     </div>
 
-    <div class="top-banner">
-        <img src="background.jpg" alt="System Intelligence Banner">
-    </div>
+    <main class="main-wrapper">
+        <h1>System Intelligence</h1>
+        <p class="subtitle">Advanced Operations Research & Industrial Analytics</p>
 
-    <div class="main-content">
-        <h1>SYSTEM INTELLIGENCE</h1>
-        <p class="tagline">Advanced Industrial Optimization & Analytics Suite</p>
-
-        <div class="btn-container">
-            <a href="YOUR_DEMO_LINK" target="_blank" class="btn btn-view">View Only (Demo)</a>
-            <a href="YOUR_PRO_LINK" target="_blank" class="btn btn-paid">Paid Version (Pro)</a>
+        <div class="cta-container">
+            <a href="YOUR_DEMO_STREAMLIT_URL" target="_blank" class="btn btn-demo">View Only (Demo)</a>
+            
+            <a href="YOUR_PAID_STREAMLIT_URL" target="_blank" class="btn btn-pro">Paid Version (Pro)</a>
         </div>
 
-        <div class="grid">
-            <div class="card">
-                <h3>Logistics</h3>
-                <p>Route & Fleet Optimization</p>
+        <div class="grid-container">
+            <div class="feature-card">
+                <h3>Logistics & Fleet</h3>
+                <p>Mathematical route optimization to reduce fuel costs and maximize delivery efficiency.</p>
             </div>
-            <div class="card">
-                <h3>Education</h3>
-                <p>Institutional Timetabling</p>
+            <div class="feature-card">
+                <h3>Education Sector</h3>
+                <p>Automated institutional timetabling and student resource allocation systems.</p>
             </div>
-            <div class="card">
-                <h3>Industry</h3>
-                <p>Resource Allocation</p>
+            <div class="feature-card">
+                <h3>Manufacturing</h3>
+                <p>Production line balancing and resource optimization using Linear Programming.</p>
             </div>
         </div>
-    </div>
+    </main>
 
-    <footer style="padding: 40px; color: #444;">&copy; 2026 System Intelligence</footer>
+    <footer>
+        &copy; 2026 SYSTEM INTELLIGENCE | ALL RIGHTS RESERVED
+    </footer>
 
 </body>
 </html>
