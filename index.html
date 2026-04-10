@@ -1,4 +1,46 @@
-main-wrapper { max-width: 1200px; margin: 0 auto; padding: 50px 20px; text-align: center; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Intelligence | Turbo Core Dashboard</title>
+    <style>
+        :root {
+            --cyan: #00f2ff;
+            --gold: #ffd700;
+            --dark-deep: #050505;
+            --navy-glow: #0a111a;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(0, 242, 255, 0.15);
+            --success-green: #00a651;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: radial-gradient(circle at top center, var(--navy-glow) 0%, var(--dark-deep) 100%);
+            color: #ffffff; line-height: 1.6; overflow-x: hidden;
+        }
+
+        /* 1. Logo Bright Effect */
+        .header-section { padding: 30px 0; text-align: center; }
+        .logo-ring {
+            width: 100px; height: 100px; margin: 0 auto;
+            border: 2px solid var(--cyan); border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .logo-ring:hover { box-shadow: 0 0 30px var(--cyan); transform: scale(1.05); filter: brightness(1.3); }
+        .logo-ring:active { box-shadow: 0 0 50px var(--cyan), 0 0 100px var(--cyan); transform: scale(0.95); filter: brightness(1.8); }
+        .logo-ring img { width: 70%; height: auto; }
+
+        .banner-container { width: 100%; background: #000; border-bottom: 2px solid var(--glass-border); }
+        .banner-container img { width: 100%; max-width: 1400px; display: block; margin: 0 auto; object-fit: cover; }
+
+        .main-wrapper { max-width: 1200px; margin: 0 auto; padding: 50px 20px; text-align: center; }
         h1 {
             font-size: clamp(2rem, 5vw, 3.5rem); color: var(--cyan);
             text-shadow: 0 0 15px rgba(0, 242, 255, 0.5);
@@ -35,15 +77,6 @@ main-wrapper { max-width: 1200px; margin: 0 auto; padding: 50px 20px; text-align
         .feature-card h3 { color: var(--gold); margin: 0 0 8px; font-size: 1.1rem; }
         .feature-card p { color: #ccc; font-size: 0.85rem; margin: 0; }
         .sec-id { font-size: 0.7rem; color: var(--cyan); opacity: 0.6; display: block; margin-bottom: 5px; }
-
-        /* --- New Smart Education Hub Style --- */
-        .hub-features { margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px; }
-        .hub-link { font-size: 0.75rem; color: var(--cyan); text-decoration: none; font-weight: bold; }
-        .price-list-container { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; margin: 40px 0; padding: 30px; text-align: left; }
-        .price-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .price-item:last-child { border: none; }
-        .price-label { color: #ccc; }
-        .price-val { color: var(--gold); font-weight: bold; }
 
         /* Payment Section Integration */
         .payment-card-wrapper {
@@ -99,37 +132,30 @@ main-wrapper { max-width: 1200px; margin: 0 auto; padding: 50px 20px; text-align
             <div class="feature-card"><span class="sec-id">SEC-TURBO-06</span><h3>Construction Projects</h3><p>Supply chain & site resource management.</p></div>
             <div class="feature-card"><span class="sec-id">SEC-TURBO-05</span><h3>Diplomacy Projects</h3><p>Strategic negotiation & policy modeling.</p></div>
             <div class="feature-card"><span class="sec-id">SEC-TURBO-08</span><h3>E-commerce Projects</h3><p>Warehouse & delivery logic optimization.</p></div>
-            
             <div class="feature-card">
                 <span class="sec-id">SEC-TURBO-07</span>
                 <h3>Education Projects</h3>
                 <p>Institutional timetabling & resource allocation.</p>
-                <div class="hub-features">
-                    <a href="https://wa.me/923245277654?text=I%20want%20to%20apply%20as%20a%20Tutor" class="hub-link">Apply as Tutor →</a>
-                </div>
+                <a href="https://wa.me/923245277654?text=I%20want%20to%20apply%20as%20a%20Tutor" style="color:var(--cyan); font-size:0.7rem; text-decoration:none; font-weight:bold; display:block; margin-top:10px;">Apply as Tutor →</a>
             </div>
         </div>
 
-        <h2 class="sector-title">Smart Education Hub - Services & Fees</h2>
-        <div class="price-list-container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
-                <div>
-                    <h4 style="color: var(--cyan); border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">Tuition Categories</h4>
-                    <div class="price-item"><span class="price-label">Class 1-10 Foundations</span><span class="price-val">PKR 4,000+</span></div>
-                    <div class="price-item"><span class="price-label">FSc / O-Level / A-Level</span><span class="price-val">PKR 8,000+</span></div>
-                    <div class="price-item"><span class="price-label">University Thesis Support</span><span class="price-val">Custom</span></div>
-                    <div class="price-item"><span class="price-label">Skill & Critical Thinking</span><span class="price-val">PKR 3,000+</span></div>
-                </div>
-                <div>
-                    <h4 style="color: var(--gold); border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">Hub Features</h4>
-                    <ul style="list-style: none; padding: 0; font-size: 0.85rem; color: #bbb;">
-                        <li style="margin-bottom: 8px;">✓ Parent-Tutor Matching (Home/Academy)</li>
-                        <li style="margin-bottom: 8px;">✓ Digital Notes & Resource Library</li>
-                        <li style="margin-bottom: 8px;">✓ Career Path & Progress Analytics</li>
-                        <li style="margin-bottom: 8px;">✓ Online Live Interactive Tuition</li>
-                    </ul>
-                    <a href="https://wa.me/923245277654?text=I%20need%20a%20tutor%20for%20my%20child" class="btn btn-demo" style="padding: 10px; font-size: 0.7rem; min-width: 100%; margin-top: 10px;">Request a Tutor</a>
-                </div>
+        <h2 class="sector-title">Smart Education Hub (Services)</h2>
+        <div class="grid-container">
+            <div class="feature-card">
+                <span class="sec-id">HUB-01</span>
+                <h3>Tuition Matching</h3>
+                <p>Home & Academy matching for Classes 1-10, FSc, O/A Levels.</p>
+            </div>
+            <div class="feature-card">
+                <span class="sec-id">HUB-02</span>
+                <h3>Academic Fee Structure</h3>
+                <p>Foundations: 4k+, Advanced: 8k+, Thesis & Skills: Custom.</p>
+            </div>
+            <div class="feature-card">
+                <span class="sec-id">HUB-03</span>
+                <h3>Digital Resources</h3>
+                <p>Access to professional notes, exam materials, and career analytics.</p>
             </div>
         </div>
 
