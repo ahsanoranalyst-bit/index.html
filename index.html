@@ -30,9 +30,7 @@
             background: rgba(0, 0, 0, 0.6);
             box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
             transition: all 0.3s ease;
-            cursor: pointer;
         }
-        .logo-ring:hover { box-shadow: 0 0 30px var(--cyan); transform: scale(1.05); filter: brightness(1.3); }
         .logo-ring img { width: 70%; height: auto; }
 
         .banner-container { width: 100%; background: #000; border-bottom: 2px solid var(--glass-border); }
@@ -46,17 +44,41 @@
         }
         .subtitle { color: var(--gold); margin-bottom: 40px; letter-spacing: 1px; }
 
-        .cta-container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
+        /* Buttons */
+        .cta-container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
         .btn {
-            padding: 15px 35px; font-weight: bold; text-decoration: none;
+            padding: 12px 30px; font-weight: bold; text-decoration: none;
             text-transform: uppercase; border-radius: 4px; transition: all 0.2s ease;
-            min-width: 180px; position: relative; overflow: hidden; display: inline-block;
+            min-width: 160px; display: inline-block; font-size: 0.9rem;
         }
         .btn-demo { background: var(--cyan); color: #000; }
         .btn-pro { border: 2px solid var(--gold); color: var(--gold); }
+        .btn-pro:hover { background: var(--gold); color: #000; }
+
+        /* --- EXCLUSIVE TOP FEATURE BOX (PAMPHLET FEATURE) --- */
+        .hub-special-box {
+            background: linear-gradient(145deg, rgba(0, 242, 255, 0.08), rgba(0, 0, 0, 0.6));
+            border: 2px solid var(--cyan);
+            border-radius: 20px;
+            padding: 40px 25px;
+            margin: 20px auto 60px;
+            box-shadow: 0 0 40px rgba(0, 242, 255, 0.15);
+            max-width: 1000px;
+            position: relative;
+        }
+        .hub-label {
+            position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+            background: var(--gold); color: #000; padding: 5px 20px;
+            font-weight: bold; font-size: 0.8rem; border-radius: 20px; text-transform: uppercase;
+        }
+        .price-table { width: 100%; border-collapse: collapse; margin: 25px 0; background: rgba(0,0,0,0.3); border-radius: 10px; overflow: hidden; }
+        .price-table th { background: rgba(0, 242, 255, 0.2); color: var(--cyan); padding: 12px; text-align: left; font-size: 0.9rem; }
+        .price-table td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: left; font-size: 0.85rem; }
+        .p-gold { color: var(--gold); font-weight: bold; }
+        /* ---------------------------------------------------- */
 
         .sector-title {
-            color: var(--cyan); font-size: 1.5rem; text-align: left;
+            color: var(--cyan); font-size: 1.4rem; text-align: left;
             margin: 40px 0 20px; border-bottom: 1px solid var(--glass-border);
             padding-bottom: 10px; text-transform: uppercase;
         }
@@ -67,26 +89,22 @@
             position: relative;
         }
         .feature-card::before { content: ""; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--cyan); }
-        .feature-card:hover { border-color: var(--cyan); box-shadow: 0 0 20px rgba(0, 242, 255, 0.2); transform: translateY(-5px); }
         .feature-card h3 { color: var(--gold); margin: 0 0 8px; font-size: 1.1rem; }
         .feature-card p { color: #ccc; font-size: 0.85rem; margin: 0; }
         .sec-id { font-size: 0.7rem; color: var(--cyan); opacity: 0.6; display: block; margin-bottom: 5px; }
 
-        /* Payment Gateway */
         .payment-card-wrapper {
-            margin: 80px auto 40px; text-align: left;
+            margin: 60px auto 40px; text-align: left;
             max-width: 900px; background: rgba(255,255,255,0.02);
             border: 2px solid var(--success-green); border-radius: 20px;
-            overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            overflow: hidden;
         }
-        .payment-header { background: var(--success-green); color: white; padding: 25px; text-align: center; }
-        .payment-content { padding: 40px; }
-        .bank-box { background: rgba(0,0,0,0.4); padding: 20px; border-radius: 12px; border: 1px dashed #444; margin-top: 20px; }
-        .bank-row { display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 5px; }
-        .bank-label { color: #888; font-size: 0.9rem; }
-        .bank-value { color: #fff; font-weight: bold; font-family: monospace; }
+        .payment-header { background: var(--success-green); color: white; padding: 20px; text-align: center; }
+        .payment-content { padding: 30px; }
+        .bank-box { background: rgba(0,0,0,0.4); padding: 15px; border-radius: 12px; border: 1px dashed #444; }
+        .bank-row { display: flex; justify-content: space-between; margin-bottom: 8px; }
 
-        footer { padding: 60px 40px; color: #444; font-size: 0.8rem; border-top: 1px solid #111; margin-top: 50px; }
+        footer { padding: 40px; color: #444; font-size: 0.8rem; border-top: 1px solid #111; margin-top: 50px; text-align: center; }
     </style>
 </head>
 <body>
@@ -106,30 +124,48 @@
             <a href="https://my-main-app-main-kr5rhphg5buac8ca4cv3n4.streamlit.app//" target="_blank" class="btn btn-pro">Pro Access</a>
         </div>
 
-        <h2 class="sector-title">Smart Education Hub (Pamphlet Features)</h2>
-        <div class="grid-container">
-            <div class="feature-card">
-                <span class="sec-id">HUB-01</span>
-                <h3>Home Tuition & Academy</h3>
-                <p>Qualified tutors for Class 1-10, FSc, O/A Levels. Personalized home matching or academy sessions.</p>
+        <section class="hub-special-box">
+            <span class="hub-label">Exclusive Service</span>
+            <h2 style="color: var(--cyan); margin-top: 0;">Smart Tutoring Hub</h2>
+            <p style="color: #bbb; font-size: 0.9rem;">Professional match-making for students and expert tutors in Lahore & Online.</p>
+
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Category / Level</th>
+                        <th>Session Format</th>
+                        <th>Estimated Fee (PKR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Primary & Secondary (1-8)</td>
+                        <td>Home / Online</td>
+                        <td class="p-gold">4,000 - 6,000 / sub</td>
+                    </tr>
+                    <tr>
+                        <td>Matric / O-Levels</td>
+                        <td>Home / Academy</td>
+                        <td class="p-gold">6,000 - 10,000 / sub</td>
+                    </tr>
+                    <tr>
+                        <td>FSc / A-Levels</td>
+                        <td>Live Interactive</td>
+                        <td class="p-gold">10,000 - 15,000 / sub</td>
+                    </tr>
+                    <tr>
+                        <td>University / Thesis</td>
+                        <td>Consultation</td>
+                        <td class="p-gold">Custom Quote</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://wa.me/923245277654?text=Register%20as%20Tutor" class="btn btn-pro" style="padding: 10px 20px; min-width: 200px;">Register as Tutor</a>
+                <a href="https://wa.me/923245277654?text=Find%20a%20Tutor" class="btn btn-demo" style="padding: 10px 20px; min-width: 200px;">Find a Tutor</a>
             </div>
-            <div class="feature-card">
-                <span class="sec-id">HUB-02</span>
-                <h3>Digital Library & Notes</h3>
-                <p>Access high-quality academic notes, test materials, and thesis support for all major subjects.</p>
-            </div>
-            <div class="feature-card" style="border-color: var(--gold);">
-                <span class="sec-id">HUB-03</span>
-                <h3>Fee Structure</h3>
-                <p>Foundation: 4,000 PKR+ | Advanced: 8,000 PKR+ | Thesis & STEM Skills: Custom pricing.</p>
-            </div>
-            <div class="feature-card">
-                <span class="sec-id">HUB-04</span>
-                <h3>Tutor Application</h3>
-                <p>Want to join our team? Professional tutors can apply now for home or online tuition opportunities.</p>
-                <a href="https://wa.me/923245277654?text=I%20want%20to%20apply%20as%20a%20Tutor" style="color:var(--cyan); font-size:0.75rem; text-decoration:none; font-weight:bold; display:block; margin-top:10px;">Apply Now →</a>
-            </div>
-        </div>
+        </section>
 
         <h2 class="sector-title">Industrial Operations (01-07)</h2>
         <div class="grid-container">
@@ -142,40 +178,23 @@
             <div class="feature-card"><span class="sec-id">SEC-TURBO-07</span><h3>Education Projects</h3><p>Institutional timetabling & resource allocation.</p></div>
         </div>
 
-        <h2 class="sector-title">Renewable & Sustainability (15-21)</h2>
+        <h2 class="sector-title">Sustainability & Shipping (15-21)</h2>
         <div class="grid-container">
             <div class="feature-card"><span class="sec-id">SEC-TURBO-15</span><h3>Pharmaceuticals</h3><p>Drug production & lab optimization.</p></div>
-            <div class="feature-card"><span class="sec-id">SEC-TURBO-16</span><h3>Real Estate</h3><p>Property development & value modeling.</p></div>
-            <div class="feature-card"><span class="sec-id">SEC-TURBO-17</span><h3>Retail Chains</h3><p>Multi-store inventory synchronization.</p></div>
             <div class="feature-card"><span class="sec-id">SEC-TURBO-18</span><h3>Shipping Companies</h3><p>Maritime logistics & container tracking.</p></div>
-            <div class="feature-card"><span class="sec-id">SEC-TURBO-19</span><h3>Telecommunications</h3><p>Network capacity & coverage planning.</p></div>
             <div class="feature-card"><span class="sec-id">SEC-TURBO-21</span><h3>Transportation</h3><p>Public transit & fleet route optimization.</p></div>
         </div>
 
         <div class="payment-card-wrapper">
-            <div class="payment-header">
-                <h2 style="margin: 0; font-size: 24px;">Secure Payment Gateway</h2>
-                <p style="margin: 5px 0 0; opacity: 0.8;">Global & Local Payment Support</p>
-            </div>
+            <div class="payment-header"><h2>Secure Payment Gateway</h2></div>
             <div class="payment-content">
-                <div style="text-align: center; margin-bottom: 30px;">
-                    <p style="color: #ccc; margin-bottom: 15px;">Fastest Payment (NayaPay/EasyPaisa/JazzCash):</p>
-                    <a href="https://wa.me/923245277654" class="btn btn-demo" style="border-radius: 50px; padding: 12px 25px;">🚀 Request Payment Link</a>
-                </div>
-                
-                <h3 style="color: var(--gold); border-left: 5px solid var(--success-green); padding-left: 10px;">Bank Transfer Details</h3>
                 <div class="bank-box">
-                    <div class="bank-row"><span class="bank-label">Account Title:</span><span class="bank-value" style="color:var(--success-green)">Ahsan Khan</span></div>
-                    <div class="bank-row"><span class="bank-label">Bank Name:</span><span class="bank-value">NayaPay (EMI) Pakistan</span></div>
-                    <div class="bank-row"><span class="bank-label">IBAN:</span><span class="bank-value">PK93 NAYA 1234 5032 4527 7654</span></div>
-                    <div class="bank-row" style="border:none;"><span class="bank-label">SWIFT Code:</span><span class="bank-value">NYPAPKKA</span></div>
+                    <div class="bank-row"><span style="color:#888;">Title:</span><span style="color:var(--success-green); font-weight:bold;">Ahsan Khan</span></div>
+                    <div class="bank-row"><span style="color:#888;">Bank:</span><span>NayaPay (EMI) Pakistan</span></div>
+                    <div class="bank-row"><span style="color:#888;">IBAN:</span><span style="font-family:monospace;">PK93 NAYA 1234 5032 4527 7654</span></div>
                 </div>
             </div>
         </div>
-
-        <p style="margin-top: 40px; color: var(--gold); font-size: 0.9rem; font-style: italic;">
-            * Share your payment screenshot at 0324-5277654 for instant activation.
-        </p>
 
     </main>
 
@@ -186,3 +205,4 @@
 
 </body>
 </html>
+
