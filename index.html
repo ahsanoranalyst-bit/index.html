@@ -22,7 +22,6 @@
             color: #ffffff; line-height: 1.6; overflow-x: hidden;
         }
 
-        /* Logo & Banner */
         .header-section { padding: 30px 0; text-align: center; }
         .logo-ring {
             width: 100px; height: 100px; margin: 0 auto;
@@ -33,7 +32,6 @@
             transition: all 0.3s ease;
             cursor: pointer;
         }
-        .logo-ring:hover { box-shadow: 0 0 30px var(--cyan); transform: scale(1.05); filter: brightness(1.3); }
         .logo-ring img { width: 70%; height: auto; }
 
         .banner-container { width: 100%; background: #000; border-bottom: 2px solid var(--glass-border); }
@@ -47,27 +45,21 @@
         }
         .subtitle { color: var(--gold); margin-bottom: 40px; letter-spacing: 1px; }
 
-        /* Buttons Base */
         .cta-container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
         .btn {
             padding: 15px 35px; font-weight: bold; text-decoration: none;
             text-transform: uppercase; border-radius: 4px; transition: all 0.2s ease;
-            min-width: 180px; position: relative; overflow: hidden;
-            display: inline-flex; justify-content: center; align-items: center; text-align: center;
+            min-width: 180px; display: inline-flex; justify-content: center; align-items: center; text-align: center;
             box-sizing: border-box;
         }
-        .btn-demo { background: var(--cyan); color: #000; box-shadow: 0 0 10px rgba(0, 242, 255, 0.3); }
-        .btn-demo:hover { box-shadow: 0 0 25px var(--cyan); filter: brightness(1.2); transform: translateY(-3px); }
+        .btn-demo { background: var(--cyan); color: #000; }
         .btn-pro { border: 2px solid var(--gold); color: var(--gold); }
-        .btn-pro:hover { background: var(--gold); color: #000; box-shadow: 0 0 25px var(--gold); transform: translateY(-3px); }
 
-        /* Table Responsive */
         .price-table-container { margin: 30px 0 20px; overflow-x: auto; background: var(--glass-bg); border-radius: 12px; border: 1px solid var(--glass-border); }
         .price-table { width: 100%; border-collapse: collapse; text-align: left; min-width: 600px; }
-        .price-table th { background: rgba(0, 242, 255, 0.1); color: var(--cyan); padding: 15px; text-transform: uppercase; font-size: 0.9rem; }
-        .price-table td { padding: 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: #ccc; vertical-align: middle; }
+        .price-table th { background: rgba(0, 242, 255, 0.1); color: var(--cyan); padding: 15px; }
+        .price-table td { padding: 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
 
-        /* Sector Grid */
         .sector-title {
             color: var(--cyan); font-size: 1.5rem; text-align: left;
             margin: 40px 0 20px; border-bottom: 1px solid var(--glass-border);
@@ -80,74 +72,58 @@
             position: relative;
         }
         .feature-card::before { content: ""; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--cyan); }
-        .feature-card:hover { border-color: var(--cyan); box-shadow: 0 0 20px rgba(0, 242, 255, 0.2); transform: translateY(-5px); }
         .feature-card h3 { color: var(--gold); margin: 0 0 8px; font-size: 1.1rem; }
         .feature-card p { color: #ccc; font-size: 0.85rem; margin: 0; }
         .sec-id { font-size: 0.7rem; color: var(--cyan); opacity: 0.6; display: block; margin-bottom: 5px; }
 
-        /* Pricing Grid */
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 40px; }
         .price-card {
             background: var(--glass-bg); border: 1px solid var(--glass-border);
-            padding: 35px 20px; border-radius: 12px; transition: 0.3s;
-            position: relative; display: flex; flex-direction: column;
+            padding: 35px 20px; border-radius: 12px; display: flex; flex-direction: column;
         }
-        .price-card:hover { border-color: var(--cyan); transform: scale(1.03); }
         .price-card h4 { color: var(--gold); font-size: 1.5rem; margin: 0; }
-        .old-price { text-decoration: line-through; color: #666; font-size: 1.1rem; margin-top: 10px; }
         .price { font-size: 2.2rem; font-weight: bold; margin: 5px 0; color: #fff; }
-        .period { color: var(--cyan); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 20px; display: block; }
         .price-card ul { list-style: none; padding: 0; text-align: left; font-size: 0.85rem; color: #bbb; margin-bottom: 25px; flex-grow: 1; }
         .price-card ul li { margin-bottom: 10px; }
-        .price-card ul li::before { content: "✓"; color: var(--cyan); margin-right: 8px; font-weight: bold; }
+        .price-card ul li::before { content: "✓"; color: var(--cyan); margin-right: 8px; }
 
-        /* Payment Gateway - Improved for Mobile */
         .payment-card-wrapper {
             margin: 80px auto 40px; text-align: left;
             max-width: 900px; background: rgba(255,255,255,0.02);
             border: 2px solid var(--success-green); border-radius: 20px;
-            overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            overflow: hidden;
         }
         .payment-header { background: var(--success-green); color: white; padding: 25px; text-align: center; }
-        .payment-content { padding: 40px; text-align: center; }
+        .payment-content { padding: 40px; }
         .bank-box {
             background: rgba(0,0,0,0.4); padding: 20px; border-radius: 12px;
-            border: 1px dashed #444; margin-top: 20px; text-align: left;
+            border: 1px dashed #444; margin-top: 20px;
         }
-        .bank-row {
-            display: flex; justify-content: space-between; margin-bottom: 15px;
-            border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px;
+        .bank-row { display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px; }
+        .bank-label { color: #888; font-size: 0.85rem; }
+        .bank-value { color: #fff; font-weight: bold; font-family: monospace; }
+
+        footer { padding: 60px 40px; color: #444; font-size: 0.8rem; border-top: 1px solid #111; text-align: center;}
+
+        /* --- CHAT BOT UI FIXES --- */
+        #si-ai-trigger { 
+            position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; 
+            background: var(--cyan); border-radius: 50%; display: flex; 
+            justify-content: center; align-items: center; cursor: pointer; z-index: 9999;
         }
-        .bank-label { color: #888; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
-        .bank-value { color: #fff; font-weight: bold; font-family: 'Courier New', Courier, monospace; font-size: 1.1rem; }
+        #si-chat-box { 
+            position: fixed; bottom: 90px; right: 20px; width: 350px; 
+            max-width: calc(100vw - 40px); height: 500px; max-height: 70vh; 
+            background: #050505; border: 1px solid var(--cyan); border-radius: 12px; 
+            display: none; flex-direction: column; z-index: 10000; overflow: hidden;
+        }
 
-        footer { padding: 60px 40px; color: #444; font-size: 0.8rem; border-top: 1px solid #111; margin-top: 50px; text-align: center;}
-
-        /* Responsive Mobile Fixes */
         @media (max-width: 768px) {
-            .main-wrapper { padding: 20px 10px; }
             .cta-container { flex-direction: column; align-items: center; }
-            .btn { width: 90%; max-width: 320px; margin: 0 auto; }
-            .pricing-grid { display: flex; flex-direction: column; align-items: center; }
-            .price-card { width: 95%; }
-            .payment-card-wrapper { width: 98%; margin: 40px auto; }
-            .payment-content { padding: 20px 15px; }
-           
-            /* Solving the text overlap in bank rows */
-            .bank-row {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 5px;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-            .bank-value {
-                font-size: 1rem;
-                word-break: break-all; /* IBAN will wrap correctly now */
-                line-height: 1.2;
-            }
-
-            h1 { font-size: 1.8rem; }
-            .subtitle { font-size: 0.9rem; }
+            .btn { width: 90%; }
+            .bank-row { flex-direction: column; align-items: flex-start; }
+            .bank-value { word-break: break-all; }
+            #si-chat-box { right: 10px; bottom: 85px; max-width: calc(100vw - 20px); }
         }
     </style>
 </head>
@@ -164,62 +140,29 @@
         <p class="subtitle">Multi-Sector Operations Optimization Suite</p>
 
         <div class="cta-container">
-            <a href="https://my-main-app-2lxcd33chjsrx3uxv9hiyz.streamlit.app/" target="_blank" class="btn btn-demo">Demo Version</a>
-            <a href="https://my-main-app-main-kr5rhphg5buac8ca4cv3n4.streamlit.app//" target="_blank" class="btn btn-pro">Pro Access</a>
-        </div>
-
-        <h2 class="sector-title">Smart Tutoring Hub & Fee Structure</h2>
-        <div class="price-table-container">
-            <table class="price-table">
-                <thead>
-                    <tr>
-                        <th>Category / Level</th>
-                        <th>Session Format</th>
-                        <th>Estimated Fee (PKR)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Primary & Secondary (Class 1-8)</td>
-                        <td>Home / Online</td>
-                        <td>4,000 - 6,000 <small style="opacity:0.6">(Per Subject)</small><br><span style="color:var(--cyan); font-size: 0.75rem;">Full Grade Pkg: 12k - 18k</span></td>
-                    </tr>
-                    <tr>
-                        <td>Matric / O-Levels (Cambridge)</td>
-                        <td>Home / Academy</td>
-                        <td>6,000 - 10,000 <small style="opacity:0.6">(Per Subject)</small><br><span style="color:var(--cyan); font-size: 0.75rem;">Science Group Pkg: 25k - 35k</span></td>
-                    </tr>
-                    <tr>
-                        <td>FSc / A-Levels</td>
-                        <td>Live Interactive</td>
-                        <td>10,000 - 15,000 <small style="opacity:0.6">(Per Subject)</small><br><span style="color:var(--cyan); font-size: 0.75rem;">Full Session Pkg: 35k - 45k</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div style="text-align: left; background: rgba(255,215,0,0.05); padding: 15px; border-left: 3px solid var(--gold); margin-bottom: 40px; border-radius: 0 10px 10px 0;">
-            <p style="margin: 0; font-size: 0.85rem; color: #ccc;"><strong style="color:var(--gold)">Special Reward:</strong> Cash prizes for top 6 performers ($150 - $20).</p>
+            <a href="#" class="btn btn-demo">Demo Version</a>
+            <a href="#" class="btn btn-pro">Pro Access</a>
         </div>
 
         <h2 class="sector-title">Industrial Operations (01-07)</h2>
         <div class="grid-container">
             <div class="feature-card"><span class="sec-id">SEC-TURBO-01</span><h3>Agricultural Operations</h3><p>Resource & harvest yield optimization.</p></div>
             <div class="feature-card"><span class="sec-id">SEC-TURBO-02</span><h3>Airline Industry</h3><p>Fleet scheduling & flight path analytics.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-03</span><h3>Automotive Sector</h3><p>Assembly line & parts supply chain logic.</p></div>
             <div class="feature-card"><span class="sec-id">SEC-TURBO-04</span><h3>Banking Projects</h3><p>Financial risk & portfolio optimization.</p></div>
-            <div class="feature-card"><span class="sec-id">SEC-TURBO-06</span><h3>Construction Projects</h3><p>Supply chain & site resource management.</p></div>
             <div class="feature-card"><span class="sec-id">SEC-TURBO-05</span><h3>Diplomacy Projects</h3><p>Strategic negotiation & policy modeling.</p></div>
-            <div class="feature-card"><span class="sec-id">SEC-TURBO-08</span><h3>E-commerce Projects</h3><p>Warehouse & delivery logic optimization.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-06</span><h3>Construction Projects</h3><p>Supply chain & site resource management.</p></div>
             <div class="feature-card"><span class="sec-id">SEC-TURBO-07</span><h3>Education Projects</h3><p>Institutional timetabling & resource allocation.</p></div>
         </div>
 
         <h2 class="sector-title">Public & Educational Services (08-14)</h2>
         <div class="grid-container">
-            <div class="feature-card"><span class="sec-id">SEC-TURBO-08b</span><h3>Energy Companies</h3><p>Grid load balancing & distribution.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-08</span><h3>E-commerce Projects</h3><p>Warehouse & delivery logic optimization.</p></div>
             <div class="feature-card"><span class="sec-id">SEC-TURBO-09</span><h3>Food Service</h3><p>Inventory & supply chain management.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-10</span><h3>Healthcare Ops</h3><p>Patient flow & medical resource scheduling.</p></div>
             <div class="feature-card"><span class="sec-id">SEC-TURBO-11</span><h3>Hotel Operations</h3><p>Occupancy & service efficiency models.</p></div>
-            <div class="feature-card"><span class="sec-id">SEC-TURBO-13</span><h3>Insurance Operations</h3><p>Actuarial modeling & claim optimization.</p></div>
             <div class="feature-card"><span class="sec-id">SEC-TURBO-12</span><h3>Manufacturing Ops</h3><p>Production line balancing & OR models.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-13</span><h3>Insurance Operations</h3><p>Actuarial modeling & claim optimization.</p></div>
             <div class="feature-card"><span class="sec-id">SEC-TURBO-14</span><h3>Military & Defense</h3><p>Logistics & strategic deployment analytics.</p></div>
         </div>
 
@@ -230,6 +173,7 @@
             <div class="feature-card"><span class="sec-id">SEC-TURBO-17</span><h3>Retail Chains</h3><p>Multi-store inventory synchronization.</p></div>
             <div class="feature-card"><span class="sec-id">SEC-TURBO-18</span><h3>Shipping Companies</h3><p>Maritime logistics & container tracking.</p></div>
             <div class="feature-card"><span class="sec-id">SEC-TURBO-19</span><h3>Telecommunications</h3><p>Network capacity & coverage planning.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-20</span><h3>Textile Industry</h3><p>Fabric production & export synchronization.</p></div>
             <div class="feature-card"><span class="sec-id">SEC-TURBO-21</span><h3>Transportation</h3><p>Public transit & fleet route optimization.</p></div>
         </div>
 
@@ -237,95 +181,58 @@
         <div class="pricing-grid">
             <div class="price-card">
                 <h4>Basic Core</h4>
-                <div class="old-price">$79</div>
                 <div class="price">$49</div>
-                <span class="period">Per Year / Single Sector</span>
+                <span style="color:var(--cyan); font-size: 0.8rem;">Per Year</span>
                 <ul>
-                    <li>1 Selected Sector Access</li>
-                    <li>7 Base Optimization Projects</li>
-                    <li>Standard Logic Access</li>
-                    <li>Email Support</li>
+                    <li>1 Selected Sector</li>
+                    <li>Standard Support</li>
                 </ul>
-                <a href="https://wa.me/923245277654" class="btn btn-pro">Select Basic</a>
+                <a href="#" class="btn btn-pro">Select Basic</a>
             </div>
-
-            <div class="price-card" style="border-color: var(--cyan); background: rgba(0, 242, 255, 0.05);">
-                <div style="background: var(--cyan); color: #000; font-size: 0.6rem; font-weight: bold; padding: 3px 10px; border-radius: 20px; align-self: center; margin-bottom: 10px;">MOST POPULAR</div>
+            <div class="price-card" style="border-color: var(--cyan);">
                 <h4>Turbo Standard</h4>
-                <div class="old-price">$599</div>
                 <div class="price">$499</div>
-                <span class="period">Per Year / Sector Mastery</span>
+                <span style="color:var(--cyan); font-size: 0.8rem;">Best Seller</span>
                 <ul>
-                    <li>Full Library of 1 Sector</li>
-                    <li>Basic + Pro Model Versions</li>
-                    <li>Advanced Heuristic Engines</li>
-                    <li>Priority WhatsApp Support</li>
+                    <li>Full Sector Mastery</li>
+                    <li>Priority Support</li>
                 </ul>
-                <a href="https://wa.me/923245277654" class="btn btn-demo">Get Turbo Access</a>
-            </div>
-
-            <div class="price-card">
-                <h4>Enterprise Pro</h4>
-                <div class="old-price">$1750</div>
-                <div class="price">$1499</div>
-                <span class="period">Per Year / Multi-Sector</span>
-                <ul>
-                    <li>3 Selected Sectors Access</li>
-                    <li>Complete Suite (All 3 Fields)</li>
-                    <li>Custom Development Integration</li>
-                    <li>24/7 Dedicated Support</li>
-                </ul>
-                <a href="https://wa.me/923245277654" class="btn btn-pro">Select Elite</a>
+                <a href="#" class="btn btn-demo">Get Turbo</a>
             </div>
         </div>
 
         <div class="payment-card-wrapper">
-            <div class="payment-header">
-                <h2 style="margin: 0; font-size: 24px;">Secure Payment Gateway</h2>
-                <p style="margin: 5px 0 0; opacity: 0.8;">Instant Activation After Verification</p>
-            </div>
+            <div class="payment-header"><h2>Secure Payment Gateway</h2></div>
             <div class="payment-content">
-                <div style="margin-bottom: 30px;">
-                    <a href="https://wa.me/923245277654" class="btn btn-demo" style="border-radius: 50px;">🚀 Request Payment Link</a>
-                </div>
                 <div class="bank-box">
-                    <div class="bank-row"><span class="bank-label">Account Title:</span><span class="bank-value" style="color:var(--success-green)">Ahsan Khan</span></div>
-                    <div class="bank-row"><span class="bank-label">Bank Name:</span><span class="bank-value">NayaPay (EMI) Pakistan</span></div>
+                    <div class="bank-row"><span class="bank-label">Account Title:</span><span class="bank-value">Ahsan Khan</span></div>
                     <div class="bank-row"><span class="bank-label">IBAN:</span><span class="bank-value">PK93 NAYA 1234 5032 4527 7654</span></div>
-                    <div class="bank-row" style="border:none;"><span class="bank-label">SWIFT Code:</span><span class="bank-value">NYPAPKKA</span></div>
                 </div>
-                <p style="font-size: 0.8rem; color: #666; text-align: center; margin-top: 20px;">Supported: Western Union | Wise | Payoneer | Local Apps</p>
             </div>
         </div>
-
     </main>
 
     <footer>
-        SYSTEM INTELLIGENCE TURBO CORE &copy; 2026 | Founded by Ahsan Khan <br>
-        <span style="opacity: 0.5;">Advanced Operational Research & Optimization Services</span>
+        SYSTEM INTELLIGENCE TURBO CORE &copy; 2026 | Founded by Ahsan Khan
     </footer>
 
-    <div id="si-ai-trigger" style="position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #00f2ff; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; box-shadow: 0 0 20px rgba(0, 242, 255, 0.4); z-index: 9999;">
-        <img src="https://cdn-icons-png.flaticon.com/512/2040/2040946.png" style="width: 30px; filter: invert(1);">
-    </div>
-
-    <div id="si-chat-box" style="position: fixed; bottom: 100px; right: 30px; width: 350px; height: 480px; background: #050505; border: 1px solid #00f2ff; border-radius: 12px; display: none; flex-direction: column; overflow: hidden; box-shadow: 0 0 30px #000; z-index: 10000; font-family: sans-serif;">
-        <div style="background: #00f2ff; color: #000; padding: 15px; font-weight: bold; display: flex; justify-content: space-between;">
+    <div id="si-ai-trigger"><img src="https://cdn-icons-png.flaticon.com/512/2040/2040946.png" style="width: 30px; filter: invert(1);"></div>
+    <div id="si-chat-box">
+        <div style="background: var(--cyan); color: #000; padding: 15px; font-weight: bold; display: flex; justify-content: space-between;">
             <span>System Intelligence Guide</span>
             <span id="close-si-chat" style="cursor: pointer;">&times;</span>
         </div>
-        <div id="si-messages" style="flex-grow: 1; padding: 15px; overflow-y: auto; font-size: 0.9rem; color: #ccc;">
-            <div style="background: rgba(0,242,255,0.1); padding: 10px; border-radius: 8px; margin-bottom: 10px; border: 1px solid rgba(0,242,255,0.2);">
-                Welcome. "System Intelligence Neural Core active. Authorized to facilitate industrial optimization and architectural guidance for Ahsan Khan's 2100+ projects. Enter a sector or query to proceed."
+        <div id="si-messages" style="flex-grow: 1; padding: 15px; overflow-y: auto; color: #ccc; font-size: 0.9rem;">
+            <div style="background: rgba(0,242,255,0.1); padding: 10px; border-radius: 8px; border: 1px solid rgba(0,242,255,0.2);">
+                Welcome. Neural Core active for Ahsan Khan's 2100+ projects.
             </div>
         </div>
-        <div style="padding: 15px; border-top: 1px solid #222; display: flex; gap: 10px;">
-            <input type="text" id="si-input" placeholder="Ask about an industry..." style="flex-grow: 1; background: transparent; border: 1px solid #333; color: #fff; padding: 8px; border-radius: 4px; outline: none;">
-            <button id="si-send" style="background: #00f2ff; border: none; padding: 0 15px; border-radius: 4px; cursor: pointer; font-weight: bold;">Send</button>
+        <div style="padding: 15px; border-top: 1px solid #222; display: flex; gap: 10px; background: #0a0a0a;">
+            <input type="text" id="si-input" placeholder="Ask about an industry..." style="flex-grow: 1; background: transparent; border: 1px solid #333; color: #fff; padding: 8px; outline: none; min-width: 0;">
+            <button id="si-send" style="background: var(--cyan); border: none; padding: 0 15px; cursor: pointer; font-weight: bold; height: 35px;">Send</button>
         </div>
     </div>
 
-    <script src="si-logic.js"></script>
     <script>
         document.getElementById('si-ai-trigger').onclick = function() {
             var chat = document.getElementById('si-chat-box');
