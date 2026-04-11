@@ -53,21 +53,20 @@
             padding: 15px 35px; font-weight: bold; text-decoration: none;
             text-transform: uppercase; border-radius: 4px; transition: all 0.2s ease;
             min-width: 180px; position: relative; overflow: hidden;
-            display: inline-block;
+            display: inline-block; text-align: center;
         }
         .btn-demo { background: var(--cyan); color: #000; box-shadow: 0 0 10px rgba(0, 242, 255, 0.3); }
         .btn-demo:hover { box-shadow: 0 0 25px var(--cyan); filter: brightness(1.2); transform: translateY(-3px); }
         .btn-pro { border: 2px solid var(--gold); color: var(--gold); }
         .btn-pro:hover { background: var(--gold); color: #000; box-shadow: 0 0 25px var(--gold); transform: translateY(-3px); }
 
-        /* Table Styling for Tutoring Hub */
+        /* Table Responsive Styling */
         .price-table-container { margin: 30px 0 20px; overflow-x: auto; background: var(--glass-bg); border-radius: 12px; border: 1px solid var(--glass-border); }
-        .price-table { width: 100%; border-collapse: collapse; text-align: left; }
+        .price-table { width: 100%; border-collapse: collapse; text-align: left; min-width: 600px; }
         .price-table th { background: rgba(0, 242, 255, 0.1); color: var(--cyan); padding: 15px; text-transform: uppercase; font-size: 0.9rem; }
         .price-table td { padding: 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: #ccc; vertical-align: middle; }
-        .price-table tr:hover { background: rgba(255, 255, 255, 0.02); }
 
-        /* Sector Cards */
+        /* Sector Cards Grid */
         .sector-title {
             color: var(--cyan); font-size: 1.5rem; text-align: left;
             margin: 40px 0 20px; border-bottom: 1px solid var(--glass-border);
@@ -85,7 +84,23 @@
         .feature-card p { color: #ccc; font-size: 0.85rem; margin: 0; }
         .sec-id { font-size: 0.7rem; color: var(--cyan); opacity: 0.6; display: block; margin-bottom: 5px; }
 
-        /* Payment & Pricing Styles */
+        /* Pricing Cards Design */
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 40px; }
+        .price-card {
+            background: var(--glass-bg); border: 1px solid var(--glass-border);
+            padding: 35px 20px; border-radius: 12px; transition: 0.3s;
+            position: relative; display: flex; flex-direction: column;
+        }
+        .price-card:hover { border-color: var(--cyan); transform: scale(1.03); }
+        .price-card h4 { color: var(--gold); font-size: 1.5rem; margin: 0; }
+        .old-price { text-decoration: line-through; color: #666; font-size: 1.1rem; margin-top: 10px; }
+        .price { font-size: 2.2rem; font-weight: bold; margin: 5px 0; color: #fff; }
+        .period { color: var(--cyan); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 20px; display: block; }
+        .price-card ul { list-style: none; padding: 0; text-align: left; font-size: 0.85rem; color: #bbb; margin-bottom: 25px; flex-grow: 1; }
+        .price-card ul li { margin-bottom: 10px; }
+        .price-card ul li::before { content: "✓"; color: var(--cyan); margin-right: 8px; font-weight: bold; }
+
+        /* Payment Gateway */
         .payment-card-wrapper {
             margin: 80px auto 40px; text-align: left;
             max-width: 900px; background: rgba(255,255,255,0.02);
@@ -95,25 +110,20 @@
         .payment-header { background: var(--success-green); color: white; padding: 25px; text-align: center; }
         .payment-content { padding: 40px; }
         .bank-box { background: rgba(0,0,0,0.4); padding: 20px; border-radius: 12px; border: 1px dashed #444; margin-top: 20px; }
-        .bank-row { display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 5px; }
+        .bank-row { display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 5px; flex-wrap: wrap; }
         .bank-label { color: #888; font-size: 0.9rem; }
         .bank-value { color: #fff; font-weight: bold; font-family: monospace; }
 
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 40px; }
-        .price-card {
-            background: var(--glass-bg); border: 1px solid var(--glass-border);
-            padding: 35px 20px; border-radius: 12px; transition: 0.3s;
-        }
-        .price-card:hover { border-color: var(--cyan); transform: scale(1.02); }
-        .price-card h4 { color: var(--gold); font-size: 1.5rem; margin: 0; }
-        .price-card .price { font-size: 2.2rem; font-weight: bold; margin: 10px 0 5px; color: #fff; }
-        .old-price { text-decoration: line-through; color: #666; font-size: 1.1rem; }
-        .period { font-size: 0.8rem; color: var(--cyan); display: block; margin-bottom: 15px; text-transform: uppercase; }
-        .price-card ul { list-style: none; padding: 0; text-align: left; font-size: 0.85rem; color: #bbb; margin-bottom: 25px; }
-        .price-card ul li { margin-bottom: 8px; }
-        .price-card ul li::before { content: "✓"; color: var(--cyan); margin-right: 8px; }
-
         footer { padding: 60px 40px; color: #444; font-size: 0.8rem; border-top: 1px solid #111; margin-top: 50px; text-align: center;}
+
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+            .main-wrapper { padding: 30px 15px; }
+            .cta-container { flex-direction: column; }
+            .btn { width: 100%; min-width: unset; }
+            .payment-content { padding: 20px; }
+            .price { font-size: 1.8rem; }
+        }
     </style>
 </head>
 <body>
@@ -133,7 +143,80 @@
             <a href="https://my-main-app-main-kr5rhphg5buac8ca4cv3n4.streamlit.app//" target="_blank" class="btn btn-pro">Pro Access</a>
         </div>
 
-        <h2 class="sector-title">Select Your Yearly Plan</h2>
+        <h2 class="sector-title">Smart Tutoring Hub & Fee Structure</h2>
+        <div class="price-table-container">
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Category / Level</th>
+                        <th>Session Format</th>
+                        <th>Estimated Fee (PKR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Primary & Secondary (Class 1-8)</td>
+                        <td>Home / Online</td>
+                        <td>4,000 - 6,000 <small style="opacity:0.6">(Per Subject)</small><br>
+                            <span style="color:var(--cyan); font-size: 0.75rem;">Full Grade Pkg: 12k - 18k</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Matric / O-Levels (Cambridge)</td>
+                        <td>Home / Academy</td>
+                        <td>6,000 - 10,000 <small style="opacity:0.6">(Per Subject)</small><br>
+                            <span style="color:var(--cyan); font-size: 0.75rem;">Science Group Pkg: 25k - 35k</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>FSc / A-Levels</td>
+                        <td>Live Interactive</td>
+                        <td>10,000 - 15,000 <small style="opacity:0.6">(Per Subject)</small><br>
+                            <span style="color:var(--cyan); font-size: 0.75rem;">Full Session Pkg: 35k - 45k</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="text-align: left; background: rgba(255,215,0,0.05); padding: 15px; border-left: 3px solid var(--gold); margin-bottom: 40px; border-radius: 0 10px 10px 0;">
+            <p style="margin: 0; font-size: 0.85rem; color: #ccc;">
+                <strong style="color:var(--gold)">Special Reward:</strong> Cash prizes for top 6 performers ($150 - $20).
+            </p>
+        </div>
+
+        <h2 class="sector-title">Industrial Operations (01-07)</h2>
+        <div class="grid-container">
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-01</span><h3>Agricultural Operations</h3><p>Resource & harvest yield optimization.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-02</span><h3>Airline Industry</h3><p>Fleet scheduling & flight path analytics.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-04</span><h3>Banking Projects</h3><p>Financial risk & portfolio optimization.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-06</span><h3>Construction Projects</h3><p>Supply chain & site resource management.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-05</span><h3>Diplomacy Projects</h3><p>Strategic negotiation & policy modeling.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-08</span><h3>E-commerce Projects</h3><p>Warehouse & delivery logic optimization.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-07</span><h3>Education Projects</h3><p>Institutional timetabling & resource allocation.</p></div>
+        </div>
+
+        <h2 class="sector-title">Public & Educational Services (08-14)</h2>
+        <div class="grid-container">
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-08b</span><h3>Energy Companies</h3><p>Grid load balancing & distribution.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-09</span><h3>Food Service</h3><p>Inventory & supply chain management.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-11</span><h3>Hotel Operations</h3><p>Occupancy & service efficiency models.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-13</span><h3>Insurance Operations</h3><p>Actuarial modeling & claim optimization.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-12</span><h3>Manufacturing Ops</h3><p>Production line balancing & OR models.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-14</span><h3>Military & Defense</h3><p>Logistics & strategic deployment analytics.</p></div>
+        </div>
+
+        <h2 class="sector-title">Renewable & Sustainability (15-21)</h2>
+        <div class="grid-container">
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-15</span><h3>Pharmaceuticals</h3><p>Drug production & lab optimization.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-16</span><h3>Real Estate</h3><p>Property development & value modeling.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-17</span><h3>Retail Chains</h3><p>Multi-store inventory synchronization.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-18</span><h3>Shipping Companies</h3><p>Maritime logistics & container tracking.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-19</span><h3>Telecommunications</h3><p>Network capacity & coverage planning.</p></div>
+            <div class="feature-card"><span class="sec-id">SEC-TURBO-21</span><h3>Transportation</h3><p>Public transit & fleet route optimization.</p></div>
+        </div>
+
+        <h2 class="sector-title">Select Your Yearly Plan (Exclusive Discount)</h2>
         <div class="pricing-grid">
             <div class="price-card">
                 <h4>Basic Core</h4>
@@ -142,26 +225,26 @@
                 <span class="period">Per Year / Single Sector</span>
                 <ul>
                     <li>1 Selected Sector Access</li>
-                    <li>7 Foundational Projects</li>
-                    <li>Standard Optimization Logic</li>
-                    <li>Email Support (48h)</li>
+                    <li>7 Base Optimization Projects</li>
+                    <li>Standard Logic Access</li>
+                    <li>Email Support</li>
                 </ul>
                 <a href="https://wa.me/923245277654" class="btn btn-pro" style="padding: 10px; font-size: 0.8rem;">Select Basic</a>
             </div>
 
-            <div class="price-card" style="border-color: var(--cyan); background: rgba(0, 242, 255, 0.02);">
-                <div style="background: var(--cyan); color: #000; font-size: 0.6rem; font-weight: bold; padding: 2px 10px; border-radius: 10px; display: inline-block; margin-bottom: 10px;">MOST POPULAR</div>
+            <div class="price-card" style="border-color: var(--cyan); background: rgba(0, 242, 255, 0.05);">
+                <div style="background: var(--cyan); color: #000; font-size: 0.6rem; font-weight: bold; padding: 3px 10px; border-radius: 20px; align-self: center; margin-bottom: 10px;">MOST POPULAR</div>
                 <h4>Turbo Standard</h4>
                 <div class="old-price">$299</div>
                 <div class="price">$199</div>
                 <span class="period">Per Year / Sector Mastery</span>
                 <ul>
-                    <li>1 Full Sector (All Projects)</li>
-                    <li>Basic + Pro Project Library</li>
+                    <li>Full Library of 1 Sector</li>
+                    <li>Basic + Pro Model Versions</li>
                     <li>Advanced Heuristic Engines</li>
                     <li>Priority WhatsApp Support</li>
                 </ul>
-                <a href="https://wa.me/923245277654" class="btn btn-demo" style="padding: 10px; font-size: 0.8rem;">Upgrade to Turbo</a>
+                <a href="https://wa.me/923245277654" class="btn btn-demo" style="padding: 10px; font-size: 0.8rem;">Get Turbo Access</a>
             </div>
 
             <div class="price-card">
@@ -171,39 +254,34 @@
                 <span class="period">Per Year / Multi-Sector</span>
                 <ul>
                     <li>3 Selected Sectors Access</li>
-                    <li>Full Library for Selected Sectors</li>
-                    <li>Custom Model Integration</li>
-                    <li>24/7 Dedicated Manager</li>
+                    <li>Complete Suite (All 3 Fields)</li>
+                    <li>Custom Development Integration</li>
+                    <li>24/7 Dedicated Support</li>
                 </ul>
-                <a href="https://wa.me/923245277654" class="btn btn-pro" style="padding: 10px; font-size: 0.8rem;">Go Enterprise</a>
+                <a href="https://wa.me/923245277654" class="btn btn-pro" style="padding: 10px; font-size: 0.8rem;">Select Elite</a>
             </div>
         </div>
 
-        <h2 class="sector-title">Secure Payment Gateway</h2>
         <div class="payment-card-wrapper">
             <div class="payment-header">
-                <h2 style="margin: 0; font-size: 24px;">Global Payment Hub</h2>
-                <p style="margin: 5px 0 0; opacity: 0.8;">Instant Activation via Payment Screenshot</p>
+                <h2 style="margin: 0; font-size: 24px;">Secure Payment Gateway</h2>
+                <p style="margin: 5px 0 0; opacity: 0.8;">Instant Activation After Verification</p>
             </div>
             <div class="payment-content">
                 <div style="text-align: center; margin-bottom: 30px;">
-                    <p style="color: #ccc; margin-bottom: 15px;">Secure Transfer via NayaPay/JazzCash/EasyPaisa:</p>
-                    <a href="https://wa.me/923245277654" class="btn btn-demo" style="border-radius: 50px;">🚀 Get Payment Link</a>
+                    <a href="https://wa.me/923245277654" class="btn btn-demo" style="border-radius: 50px;">🚀 Request Payment Link</a>
                 </div>
-                
-                <h3 style="color: var(--gold); border-left: 5px solid var(--success-green); padding-left: 10px;">Bank Transfer Details</h3>
                 <div class="bank-box">
                     <div class="bank-row"><span class="bank-label">Account Title:</span><span class="bank-value" style="color:var(--success-green)">Ahsan Khan</span></div>
                     <div class="bank-row"><span class="bank-label">Bank Name:</span><span class="bank-value">NayaPay (EMI) Pakistan</span></div>
                     <div class="bank-row"><span class="bank-label">IBAN:</span><span class="bank-value">PK93 NAYA 1234 5032 4527 7654</span></div>
                     <div class="bank-row" style="border:none;"><span class="bank-label">SWIFT Code:</span><span class="bank-value">NYPAPKKA</span></div>
                 </div>
+                <p style="font-size: 0.8rem; color: #666; text-align: center; margin-top: 20px;">
+                    Supported: Western Union | Wise | Payoneer | Local Apps
+                </p>
             </div>
         </div>
-
-        <p style="margin-top: 40px; color: var(--gold); font-size: 0.9rem; font-style: italic;">
-            * Pricing is inclusive of all optimization updates for 12 months.
-        </p>
 
     </main>
 
@@ -214,3 +292,4 @@
 
 </body>
 </html>
+
