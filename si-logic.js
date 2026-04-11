@@ -66,13 +66,13 @@ const siKnowledge = {
 
 "is ahsan khan in korea": "The founder has significant professional recognition and project history within the South Korean industrial sector."
 
-"how to pay from pakistan": "Local clients can use NayaPay or EasyPaisa for instant verification and activation."
+"how to pay from Pakistan ": "Local clients can use NayaPay or EasyPaisa for instant verification and activation."
 
 "how to pay internationally": "International clients are directed to use Western Union, Wise, or Payoneer through our gateway."
 
-"what is deterministic logic": "It is a system where no randomness is involved in the development of future states of the system."
+"what is deterministic logic?": "It is a system where no randomness is involved in the development of future states of the system."
 
-"can i cancel my plan": "Licenses are valid for one year. Refund policies apply according to the terms of the specific license tier."
+"Can I cancel my plan?": "Licenses are valid for one year. Refund policies apply according to the terms of the specific license tier."
 
 "who is this tool for": "This tool is for institutional leaders, industrial engineers, and managers seeking operational efficiency."
 
@@ -104,8 +104,8 @@ const siKnowledge = {
 
 "why choose system intelligence": "Because it offers deterministic, industrial-grade optimization that generic AI tools cannot replicate."
 
-"what is the final goal": "To establish the 'Neural Core' as the global standard for industrial and institutional management."
-        "tell me about pro": "The **Enterprise Pro Plan ($499/Year)** is our elite license. It provides custom development, 24/7 support, and full suite access. Click 'Select Elite' for activation.",
+"what is the final goal": "To establish the 'Neural Core' as the global standard for industrial and institutional management."  
+    "tell me about pro": "The **Enterprise Pro Plan ($499/Year)** is our elite license. It provides custom development, 24/7 support, and full suite access. Click 'Select Elite' for activation.",
         // آپ یہاں مزید سوال اور جواب اسی فارمیٹ میں ڈال سکتے ہیں
     },
 
