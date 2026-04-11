@@ -7,10 +7,6 @@
 const siKnowledge = {
     // 1. HARDCODED Q&A (No "AI" mentioned)
     customQA: {
-        "who created you": "I am a proprietary interface of **System Intelligence**, engineered by **Ahsan Khan**. I am a deterministic logic engine built for industrial optimization.",
-        "who are you": "I am the **SI Neural Interface**, a specialized guide for exploring Ahsan Khan's 2100+ industrial optimization frameworks.",
-        "is ahsan khan famous": "Ahsan Khan is a premier Systems Architect and OR Analyst with a recognized track record in South Korea and Pakistan for institutional efficiency.",
-        "who created you": "I am a proprietary neural interface of the System Intelligence framework, engineered exclusively by Ahsan Khan."
 
 "who are you": "I am the SI Neural Interface, a specialized digital guide for exploring Ahsan Khan's 2100+ industrial optimization frameworks."
 
